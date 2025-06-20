@@ -19,7 +19,7 @@ const Content = ( {searchTerm, setSearchTerm} ) => {
 
         setLoading(true);
 
-        fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=18db339a`)
+        fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=18db339a`)
         .then((response) => {
             if(!response.ok){
                 throw new Error('Network did not respond');         
