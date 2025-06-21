@@ -8,6 +8,7 @@ const Content = ( {searchTerm, setSearchTerm} ) => {
     const [showData , setshowData] = React.useState(false);
     const [showmovies, setshowMovies] = React.useState(true);
 
+
     useEffect(() => {
         if (searchTerm.trim() === "") {
             // When input is cleared, reset state and avoid fetch
@@ -46,7 +47,7 @@ const Content = ( {searchTerm, setSearchTerm} ) => {
                     <div>
                         <h1>Bringing the Big Screen to your Home</h1>
                         <p>Discover, critique and celebrate movies with honest reviews and fresh takes on every film.</p>
-                        <button onClick={() => {setshowData(true), setshowMovies(false)}}>Discover More..</button>
+                        <button className="discover" onClick={() => {setshowData(true), setshowMovies(false)}}>Discover Films here...</button>
                         {loading && <p>Loading...</p>}
                         {error && <p>Error: {error.message}</p>}
 
@@ -71,7 +72,7 @@ const Content = ( {searchTerm, setSearchTerm} ) => {
                             <div className="movie-grid">
                                 {movies.map((movie) => (
                                     
-                                    <div key={movie.imdbID} className="movie-card">
+                                    <div key={movie.imdbID} className="movie-card" onClick={() => {window.open(`https://www.imdb.com/title/${movie.imdbID}/`);}}>
                                         <img src={movie.Poster !== "N/A" ? movie.Poster : 'https://via.placeholder.com/50x100?text=No+Image'} alt={movie.Title} />
                                         <p>{movie.Title}</p>
                                         <p>{movie.Year}</p>

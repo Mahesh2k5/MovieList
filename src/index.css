@@ -1,6 +1,12 @@
 html, body, #root {
   margin: 0;
   padding: 0;
+  color: white;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('assets/wp4676581-4k-pc-wallpapers.jpg') no-repeat center center/cover;
 }
 
 .app{
@@ -11,7 +17,7 @@ html, body, #root {
 
 .icon-link{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .icon h1{
@@ -38,13 +44,14 @@ html, body, #root {
 .navs a{
   text-decoration: none;
   padding: 10px;
-  color: black;
+  color: white;
 }
 
 .navbtns{
   border: none;
   background-color:transparent;
   font-size: medium;
+  color: white;
 }
 
 .navbtns:hover{
@@ -59,21 +66,42 @@ html, body, #root {
   flex: 1;
 }
 
+.content h1,p{
+  margin: 15px;
+}
+
 .type{
   display: flex;
   gap: 20px;
 }
 
-.type button{
-  border: 2px solid black;
-  height: 30px;
-  width: 70px;
-  border-radius: 5px;
+.discover,.type button{
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);  /* translucent white */
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(6px); /* glass effect */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .type button:hover{
-  background-color: black;
-  color: wheat;
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  transform: scale(1.05);
+}
+
+.discover:hover{
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+
 }
 
 .search{
@@ -82,12 +110,15 @@ html, body, #root {
   font-size: 20px;
   padding: 5px;
   margin: 40px;
-  border: 1px solid black;
+  outline: none;
   border-radius: 10px;
   height: 30px;
   width: 260px;
+  background-color: inherit;
+  border-bottom: 2px solid white;
+  caret-color: white;
+  color: white;
 }
-
 
 
 .movie-grid{
@@ -102,6 +133,8 @@ html, body, #root {
   width: 170px;
   margin: 10px;
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);  /* translucent white */
+  backdrop-filter: blur(6px); /* glass effect */
 }
 
 img{
@@ -111,12 +144,9 @@ img{
 }
 
 .movie-card:hover{
-  transform: scale(1.05);
   transition: 0.2s ease-in-out;
-  box-shadow: 6px 3px 20px grey;
-}
-
-h2,p{
-  padding: 0px;
-  margin: 0px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  transform: scale(1.05);
 }
