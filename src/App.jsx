@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="app">
       <NavBar setSearchTerm={setSearchTerm} />
+      <hr />
       <Content searchTerm = {searchTerm} setSearchTerm={setSearchTerm} />
     </div>
   )

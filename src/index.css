@@ -4,6 +4,11 @@ html, body, #root {
   color: white;
 }
 
+hr{
+  margin-bottom: 40px;
+  width: 100%;
+}
+
 body{
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
               url('assets/wp4676581-4k-pc-wallpapers.jpg') no-repeat center center/cover;
@@ -33,6 +38,7 @@ body{
   display: flex;
   align-items: center;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .navs{
@@ -73,6 +79,7 @@ body{
 .type{
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .discover,.type button{
@@ -126,6 +133,7 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .movie-card{

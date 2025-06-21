@@ -11,7 +11,6 @@ const NavBar = ({ setSearchTerm }) => {
                     <button className="navbtns">Favourites</button>
                 </div>
             </div>
-            <hr />
         </>
     )
 }
