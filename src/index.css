@@ -2,159 +2,235 @@ html, body, #root {
   margin: 0;
   padding: 0;
   color: white;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-hr{
-  margin-bottom: 40px;
+body {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url('assets/wp4676581-4k-pc-wallpapers.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+}
+
+hr {
   width: 100%;
 }
 
-body{
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('assets/wp4676581-4k-pc-wallpapers.jpg') no-repeat center center/cover;
-}
-
-.app{
+.app {
   display: flex;
   flex-direction: column;
   min-height: 90vh;
 }
 
-.icon-link{
-  text-decoration: none;
-  color: white;
-}
-
-.icon h1{
-  padding: 0px;
-  margin: 5px;
-}
-
-.icon:hover{
-  cursor: pointer;
-}
-
-.navbar{
+/* Navbar Styles */
+.navbar {
   display: flex;
   align-items: center;
-  margin: 0;
-  flex-wrap: wrap;
+  padding: 1px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
-.navs{
+.navs {
   margin-left: auto;
-  font-size: large;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
-
-.navs a{
+.nav-link {
   text-decoration: none;
-  padding: 10px;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.icon-link {
+  text-decoration: none;
   color: white;
 }
 
-.navbtns{
-  border: none;
-  background-color:transparent;
-  font-size: medium;
-  color: white;
+.icon h1 {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
-.navbtns:hover{
-  cursor: pointer;
-}
-
-.content{
+/* Content Styles */
+.content {
+  flex: 1;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
-.content h1,p{
-  margin: 15px;
+.welcome-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.type{
+.welcome-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Movie Grid Styles */
+.movie-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.type {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.discover,.type button{
-  padding: 10px 20px;
-  margin: 10px;
+.type button {
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.15);  /* translucent white */
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
   font-weight: 500;
   letter-spacing: 0.5px;
-  backdrop-filter: blur(6px); /* glass effect */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.type button:hover{
-  background: rgba(255, 255, 255, 0.3);
-  color: #000;
-  transform: scale(1.05);
+.type button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.discover:hover{
-  background: rgba(255, 255, 255, 0.3);
-  color: #000;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-
-}
-
-.search{
-  text-align: center;
-  font-weight:bold;
-  font-size: 20px;
-  padding: 5px;
-  margin: 40px;
-  outline: none;
-  border-radius: 10px;
-  height: 30px;
-  width: 260px;
-  background-color: inherit;
-  border-bottom: 2px solid white;
-  caret-color: white;
-  color: white;
-}
-
-
-.movie-grid{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.movie-card{
-  height: fit-content;
-  width: 170px;
-  margin: 10px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.15);  /* translucent white */
-  backdrop-filter: blur(6px); /* glass effect */
-}
-
-img{
-  height: auto;
+.search {
   width: 100%;
-  border-radius: 3px;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: inherit;
+  border-bottom: 3px solid white;
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
 }
 
-.movie-card:hover{
-  transition: 0.2s ease-in-out;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.3);
+.search:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.movie-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  width: 190px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.movie-poster {
+  position: relative;
+  padding-top: 150%;
+}
+
+.movie-poster img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 20px;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.movie-info p {
+  margin: 00;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.discover {
+  padding: 10px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.discover:hover {  
+  background: rgba(255, 255, 255, 0.5);
   color: #000;
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.status-message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.status-message.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
 }
